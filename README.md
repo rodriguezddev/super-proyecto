@@ -1,142 +1,108 @@
-# Mantis Free React Material UI Dashboard Template [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Download%20Mantis%20React%20-%20The%20professional%20Material%20designed%20React%20Admin%20Dashboard%20Template%20&url=https://mantisdashboard.io&via=codedthemes&hashtags=reactjs,webdev,developers,javascript)
+# Garage Street - Sistema de Gestión de Vehículos
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/codedthemes/mantis-free-react-admin-template/blob/main/LICENSE)
-[![GitHub package version](https://img.shields.io/github/package-json/v/codedthemes/mantis-free-react-admin-template)](https://github.com/codedthemes/mantis-free-react-admin-template/)
+Este proyecto es un sistema de gestión de vehículos para el taller Garage Street. Permite a los usuarios gestionar citas, clientes, pagos, presupuestos, comunicaciones y notificaciones relacionadas con el taller.
 
-Mantis is a free and open source React dashboard template made using the Material UI React component library with aim of flexibility and better customizability.
+## Características
 
-### Name Derived From Nature
+- Gestión de citas
+- Gestión de clientes
+- Gestión de pagos
+- Presupuestos
+- Comunicaciones
+- Notificaciones
 
-Mantis Logo is inspired from the insect name - 'Mantises' as they have triangular heads with flexible Necks. Also, the name is derived from two popular UI frameworks, Material UI and Ant Design (M-Ant-is).
+## Requisitos
 
-Mantis has Ant Design principal on top of the MAterial UI React component library.
+- Node.js (versión 14 o superior)
+- npm (versión 6 o superior)
 
-:star: :star: :star: Support us by giving star (Top right of this page) if you like the theme :star: :star: :star:
+## Instalación
 
-![mantis-free-react-dashboard-template.jpg](https://mantisdashboard.io/adv-banner-images/og-social-v1.1.0.png)
+1. Clona el repositorio:
+   ```sh
+   git clone https://github.com/tu-usuario/garage-street.git
+   cd garage-street
 
-The [Pro version](https://mantisdashboard.io) of Mantis react template includes features such as TypeScript, apps, authentication methods (i.e. JWT, Auth0, Firebase), advance components, form plugins, layouts, widgets, and more.
+2. Run
 
-| [Mantis Free](https://mantisdashboard.io/free) | [Mantis Pro](https://mantisdashboard.io)                                         |
-| ---------------------------------------------- | :------------------------------------------------------------------------------- |
-| **7** Demo pages                               | **85+** Demo pages                                                               |
-| -                                              | ✓ Multi-language                                                                 |
-| -                                              | ✓ Dark/Light Mode 🌓                                                             |
-| -                                              | ✓ TypeScript version                                                             |
-| -                                              | ✓ Design files (Figma)                                                           |
-| -                                              | ✓ Multiple color options                                                         |
-| -                                              | ✓ RTL                                                                            |
-| -                                              | ✓ JWT, Firebase, Auth0, AWS authentication                                       |
-| -                                              | ✓ [More components](https://mantisdashboard.io/components-overview/autocomplete) |
-| ✓ MIT License                                  | ✓ [Pro License](https://mui.com/store/license/)                                  |
+   ```shell
+       $ npm install
+   ```
 
-## Why Mantis?
+3. Running server with wherever the next command:
+   ```shell
+       $ npm start
+   ```
 
-Mantis offers everything needed to build an advanced dashboard application. In the initial release, we included following high-end features,
+The project is running on http://127.0.0.1:3000
 
-- Support React18.
-- Professional user interface.
-- Material UI React components.
-- Fully responsive, all modern browser supported.
-- Easy to use code structure
-- Flexible & high-Performance code
-- Simple documentation
+## Dev Guide
 
-## Free Mantis React version
+### Branch prefixes
 
-#### Preview
+How to name your supporting branch prefixes?
 
-- [Demo](https://mantisdashboard.io/free)
+- Feature branches? [feature/]
+- Release branches? [release/]
+- Hotfix branches? [hotfix/]
+- Support branches? [support/]
+- Enhancement branches? [enhancement/]
 
-#### Download
+Example:
+`$ git checkout -b feature/my-awesome-feature`
 
-- [Download from GitHub](https://github.com/codedthemes/mantis-free-react-admin-template)
+Reference: [Git Flow](https://github.com/vivebamba/wiki/blob/revision/content/guidelines/git-flow.md)
 
-## Mantis Pro version
+### Testing
 
-#### Preview
+The project counts with unit and integration tests scripts run by jest and cypress,
+respectively. If you want to do TDD, we recommend you to run interactive commands, so
+you will test your code immediately after changes are made.
 
-- [Demo](https://mantisdashboard.io)
+1. Running test
+   ```shell
+       $ npm run test
+   ```
+2. Run e2e testing tool in interactive mode
+   ```shell
+       $ npm run cy:open
+   ```
+3. Run e2e testing tool in command line
+   ```shell
+       $ npm run cy:run
+   ```
+   > Important: Before running e2e tests, make sure you are running the frontend
+   > application in port 3000
 
-#### Purchase
+### Linting
 
-- [Buy now](https://mui.com/store/items/mantis-react-admin-dashboard-template/)
+eslint will return errors and provide feedback of any line in the code that breaks the
+linting rules that the project has been configured with. What rules those are? You can check them
+in `.eslintrc.js` file.
 
-## Table of contents
+1. Running lint
+   ```shell
+       $ npm run lint
+   ```
+2. Running lint fix
+   ```shell
+       $ npm run lint:fix
+   ```
 
-- [Getting started](#getting-started)
-- [Documentation](#documentation)
-- [Technology stack](#technology-stack)
-- [Author](#author)
-- [Issues?](#issues)
-- [License](#license)
-- [More Free React Templates](#more-free-react-material-admin-dashboard-templates)
-- [More Pro React Templates](#more-premium-react-material-admin-dashboard-templates)
-- [Follow us](#follow-us)
+### Code formatting
 
-## Getting Started
+prettier will handle the code formatting using provided configuration rules.
+Make sure you configure your IDE or text editor so prettier runs on code
+formatting tasks.
 
-1. Clone from Github
+### Git hooks
 
-```
-git clone https://github.com/codedthemes/mantis-free-react-admin-template.git
-```
+Husky is the tool that allows running commands in reaction of the execution of git tasks.
 
-2. Install packages
+#### Pre-commit
 
-```
-yarn
-```
+Runs lint-staged command that executes the lint tool on the code and tries to fix all linting detected errors.
 
-3. Run project
+#### Pre-push
 
-```
-yarn start
-```
-
-## Documentation
-
-[Mantis documentation](https://codedthemes.gitbook.io/mantis/) helps you out in all aspects from Installation to deployment.
-
-## Technology stack
-
-- [Material UI V5](https://mui.com/core/)
-- Built with React Hooks API.
-- React context API for state management.
-- SWR.
-- React Router for navigation routing.
-- Support for Vite.
-- Code splitting.
-- CSS-in-JS.
-
-## Author
-
-Mantis is managed by team [CodedThemes](https://codedthemes.com).
-
-## Issues
-
-Please generate a [GitHub issue](https://github.com/codedthemes/mantis-free-react-admin-template/issues) if you found a bug in any version. We are try our best to resolve the issue.
-
-## License
-
-- Licensed under [MIT](https://github.com/codedthemes/datta-able-bootstrap-dashboard/blob/master/LICENSE)
-
-## More Free React Material Admin Dashboard Templates
-
-- [Free Materially](https://codedthemes.com/item/materially-free-reactjs-admin-template/)
-- [Free Berry](https://mui.com/store/items/berry-react-material-admin-free/)
-
-## More premium React Material Admin Dashboard Templates
-
-- [Materially](https://codedthemes.com/item/materially-reactjs-admin-dashboard/)
-- [Berry](https://mui.com/store/items/berry-react-material-admin/)
-
-## Follow us
-
-- Website [https://mantisdashboard.io](https://mantisdashboard.io)
-- Blog [https://blog.mantisdashboard.io](https://blog.mantisdashboard.io)
-- CodedThemes [https://codedthemes.com](https://codedthemes.com)
-- Dribbble [https://dribbble.com/codedthemes](https://dribbble.com/codedthemes)
-- Facebook [https://www.facebook.com/codedthemes](https://www.facebook.com/codedthemes)
-- Twitter [https://twitter.com/codedthemes](https://twitter.com/codedthemes)
+Run cy:run command that executes cypress test detected integration errors

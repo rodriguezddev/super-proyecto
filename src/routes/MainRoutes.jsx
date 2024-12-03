@@ -1,51 +1,46 @@
 import { lazy } from 'react';
-
-// project import
 import Loadable from 'components/Loadable';
-import Dashboard from 'layout/Dashboard';
+import Dashboard from 'layout/Dashboard'; // Importa el componente PrivateRoute
+import PrivateRoute from 'auth/PrivateRoute';
 
 const Color = Loadable(lazy(() => import('pages/component-overview/color')));
 const Typography = Loadable(lazy(() => import('pages/component-overview/typography')));
 const Shadow = Loadable(lazy(() => import('pages/component-overview/shadows')));
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard/index')));
-
-// render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/sample-page')));
-
-// ==============================|| MAIN ROUTING ||============================== //
 
 const MainRoutes = {
   path: '/',
-  element: <Dashboard />,
+  element: <PrivateRoute element={<Dashboard />} />, // Usa PrivateRoute aquí
   children: [
     {
       path: '/',
-      element: <DashboardDefault />
+      element: <PrivateRoute element={<DashboardDefault />} /> // Usa PrivateRoute aquí
     },
     {
       path: 'color',
-      element: <Color />
+      element: <PrivateRoute element={<Color />} /> // Usa PrivateRoute aquí
     },
     {
       path: 'dashboard',
       children: [
         {
           path: 'default',
-          element: <DashboardDefault />
+          element: <PrivateRoute element={<DashboardDefault />} /> // Usa PrivateRoute aquí
         }
       ]
     },
     {
       path: 'sample-page',
-      element: <SamplePage />
+      element: <PrivateRoute element={<SamplePage />} /> // Usa PrivateRoute aquí
     },
     {
       path: 'shadow',
-      element: <Shadow />
+      element: <PrivateRoute element={<Shadow />} /> // Usa PrivateRoute aquí
     },
     {
       path: 'typography',
-      element: <Typography />
+      element: <PrivateRoute element={<Typography />} /> // Usa PrivateRoute aquí
     }
   ]
 };

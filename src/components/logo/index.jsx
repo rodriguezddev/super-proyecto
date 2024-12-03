@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './index.css'
 
 // material-ui
 import { ButtonBase } from '@mui/material';
@@ -7,23 +8,16 @@ import Stack from '@mui/material/Stack';
 import Chip from '@mui/material/Chip';
 
 // project import
-import Logo from './LogoMain';
 import config from 'config';
+import logo from 'assets/images/icons/logo.png';
 
 // ==============================|| MAIN LOGO ||============================== //
 
-const LogoSection = ({ sx, to }) => {
+const LogoSection = ({ sx, to, w }) => {
   return (
-    <ButtonBase disableRipple component={Link} to={!to ? config.defaultPath : to} sx={sx}>
-      <Stack direction="row" spacing={1} alignItems="center">
-        <Logo />
-        <Chip
-          label={import.meta.env.VITE_APP_VERSION}
-          variant="outlined"
-          size="small"
-          color="secondary"
-          sx={{ mt: 0.5, ml: 1, fontSize: '0.725rem', height: 20, '& .MuiChip-label': { px: 0.5 } }}
-        />
+    <ButtonBase className="ta" disableRipple component={Link} to={!to ? config.defaultPath : to} style={{ height: '10rem' }}>
+      <Stack direction="row" spacing={1} alignItems="center" style={{ padding: '0.5rem'}}>
+        <img src={logo} alt="" style={{ width: w ? w : '9rem' }} />
       </Stack>
     </ButtonBase>
   );
@@ -31,7 +25,8 @@ const LogoSection = ({ sx, to }) => {
 
 LogoSection.propTypes = {
   sx: PropTypes.object,
-  to: PropTypes.string
+  to: PropTypes.string,
+  w: PropTypes.string
 };
 
 export default LogoSection;

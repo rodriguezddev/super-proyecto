@@ -31,7 +31,7 @@ const dashboard = {
       id: 'citas',
       title: 'Citas',
       type: 'item',
-      url: '/Citas',
+      url: '/citas',
       icon: icons.CalendarOutlined,
       breadcrumbs: false
     },
@@ -55,7 +55,7 @@ const dashboard = {
       id: 'presupuestos',
       title: 'Presupuestos',
       type: 'item',
-      url: '/dashboard/default',
+      url: '/presupuestos',
       icon: icons.CalculatorOutlined,
       breadcrumbs: false
     },

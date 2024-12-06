@@ -9,7 +9,7 @@ import support from './support';
 const menuItems = {
   items: [
     dashboard,
-    pages,
+    // pages,
     // utilities,
     // support
   ]
